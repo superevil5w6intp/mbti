@@ -253,6 +253,16 @@ const Sidebar = ({ select, setSelect, selectSub, setSelectSub }) => {
           </Text>
         </>
       )}
+      <Text
+        selected={select === "복습"}
+        onClick={() => {
+          setSelect("복습");
+          setSelectSub("복습");
+        }}
+      >
+        {" "}
+        복습
+      </Text>
     </Container>
   );
 };

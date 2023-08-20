@@ -27,6 +27,7 @@ import Qjs from "./components/ahqn/Qjs";
 import Qjd from "./components/ahqn/Qjd";
 import Wjddml from "./components/dlwlsqjq/Wjddml";
 import Qjsdurrl from "./components/dlwlsqjq/Qjsdurrl";
+import Study from "./components/study/Study";
 
 const Container = styled.div`
   width: 100%;
@@ -105,6 +106,8 @@ function App() {
             <Wjddml />
           ) : selectSub === "이진법 번역기" ? (
             <Qjsdurrl />
+          ) : selectSub === "복습" ? (
+            <Study />
           ) : (
             <></>
           )}
