@@ -12,7 +12,7 @@ const Plus = () => {
   }
 
   return (
-    <div style={{ border: "1px solid purple", height: "100px" }}>
+    <div style={{ height: "100px" }}>
       <span>
         <input
           value={x}

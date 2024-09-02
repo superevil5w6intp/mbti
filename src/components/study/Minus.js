@@ -10,7 +10,7 @@ const Minus = () => {
     setResult(Number(x) - Number(y));
   }
   return (
-    <div style={{ border: "1px solid yellow", height: "100px" }}>
+    <div style={{ height: "100px" }}>
       <span>
         <input
           value={x}
@@ -19,13 +19,13 @@ const Minus = () => {
           style={{ fontSize: "24px" }}
         />
       </span>
-      <span> + </span>
+      <span>-</span>
       <span>
         <input
           value={y}
           onChange={(e) => setY(e.target.value)}
           type="number"
-          style={{ fontsize: "24px" }}
+          style={{ fontSize: "24px" }}
         />
       </span>
       <span>
@@ -36,7 +36,10 @@ const Minus = () => {
             color: "white",
           }}
           onClick={() => minus()}
-        ></button>
+        >
+          {" "}
+          =
+        </button>
       </span>
       <span> {result} </span>
     </div>

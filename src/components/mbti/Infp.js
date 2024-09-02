@@ -29,17 +29,21 @@ const Contents = styled.div`
 const Infp = () => {
   return (
     <Container>
-      <Title>Infp 특</Title>
-      <Contents>
-        <p>개인주의자다.</p>
-        <p>이상주의자다.</p>
-        <p>
-          진정성을 중시한다. 가식적이거나 피상적, 상투적인 것에 큰 거부감을 느낄
-          수 있다.
-        </p>
-        <p>이해심 많고 적응력이 좋으며, 대체로 관대하고 개방적이다.</p>
-        <p>조화롭게 살고자 하며 분쟁을 피하기 위해서는 철저하다.</p>
-      </Contents>
+      <details>
+        <summary>
+          <Title>Infp 특</Title>
+        </summary>
+        <Contents>
+          <p>개인주의자다.</p>
+          <p>이상주의자다.</p>
+          <p>
+            진정성을 중시한다. 가식적이거나 피상적, 상투적인 것에 큰 거부감을
+            느낄 수 있다.
+          </p>
+          <p>이해심 많고 적응력이 좋으며, 대체로 관대하고 개방적이다.</p>
+          <p>조화롭게 살고자 하며 분쟁을 피하기 위해서는 철저하다.</p>
+        </Contents>
+      </details>
       <Title>Infp 궁합 </Title>
       <Contents>
         <p>최고 궁합 : Enfj, Entj</p>

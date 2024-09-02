@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import Mbw from "./components/Mb/Mbw";
 import Sidebar from "./components/Sidebar";
@@ -28,6 +28,7 @@ import Qjd from "./components/ahqn/Qjd";
 import Wjddml from "./components/dlwlsqjq/Wjddml";
 import Qjsdurrl from "./components/dlwlsqjq/Qjsdurrl";
 import Study from "./components/study/Study";
+import Pepero from "./components/study/Pepero";
 
 const Container = styled.div`
   width: 100%;
@@ -46,10 +47,26 @@ const Contents = styled.div`
 `;
 
 function App() {
-  console.log("미소");
+  const contents = useRef();
+  const [scroll, setScroll] = useState(0);
 
   const [select, setSelect] = useState("곰벌레");
   const [selectSub, setSelectSub] = useState("곰벌레 정의");
+
+  function getScroll(value) {
+    const domHeight = contents.current.scrollHeight - window.innerHeight;
+    const current = contents.current.scrollTop;
+
+    const result = (current / domHeight) * 100;
+
+    setScroll(result);
+  }
+
+  useEffect(() => {
+    contents.current.addEventListener("scroll", getScroll);
+
+    return () => contents.current.removeEventListener("scroll", getScroll);
+  }, []);
   return (
     <>
       <Container>
@@ -59,7 +76,7 @@ function App() {
           selectSub={selectSub}
           setSelectSub={setSelectSub}
         />
-        <Contents>
+        <Contents ref={contents}>
           {selectSub === "곰벌레 정의" ? (
             <Mbw />
           ) : selectSub === "곰벌레 생존력" ? (
@@ -111,6 +128,7 @@ function App() {
           ) : (
             <></>
           )}
+          <Pepero value={scroll}></Pepero>
         </Contents>
       </Container>
     </>
